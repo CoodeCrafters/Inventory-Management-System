@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Login - Retail Pro System</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- System Status Bar -->
+        <div class="system-status">
+            <div class="status-item">
+                <span class="status-online">●</span>
+                System: Online
+            </div>
+            <div class="status-item">
+                <span class="status-online">●</span>
+                Database: Offline
+            </div>
+            
+        </div>
+
+        <!-- Date Time Display -->
+        <div class="datetime-display">
+            <div class="date" id="currentDate">Loading...</div>
+            <div class="time" id="currentTime">00:00:00</div>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="login-header">
+                <h1>RETAIL PRO POS</h1>
+                <p>Point of Sale System</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">EMPLOYEE ID / USERNAME</label>
+                    <input type="text" id="username" name="username" required 
+                           placeholder="Enter your employee ID" autofocus>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Enter your password">
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <span id="loginText">SIGN IN</span>
+                    <div id="loginSpinner" class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+
+            
+            
+            <div id="errorAlert" class="alert alert-error" style="display: none;"></div>
+            
+            <div class="shortcut-hint">
+                Press F2 for Quick Login | F12 for System Info
+            </div>
+            
+            <div class="login-footer">
+                <p>DEMO: Use admin / password123</p>
+                <p>For technical support, contact IT Department</p>
+            </div>
+
+            <div class="company-brand">
+                <div class="company-name">© 2024 RETAIL SOLUTIONS INC.</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

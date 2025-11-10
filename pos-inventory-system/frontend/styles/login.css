@@ -1,0 +1,257 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px 25px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.login-header h1 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    background: white;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 11px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}
+
+.login-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 2px;
+    margin: 15px 0;
+    font-size: 13px;
+    border-left: 4px solid;
+}
+
+.alert-error {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.login-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+}
+
+.login-footer p {
+    margin-bottom: 5px;
+}
+
+.login-footer p:first-child {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* System Status Bar */
+.system-status {
+    background: #2c3e50;
+    color: white;
+    padding: 8px 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px 3px 0 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-online {
+    color: #28a745;
+}
+
+.status-offline {
+    color: #dc3545;
+}
+
+/* Date Time Display - POS Style */
+.datetime-display {
+    background: #34495e;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 0 0 3px 3px;
+    margin-bottom: 20px;
+}
+
+.date {
+    font-size: 13px;
+    color: #bdc3c7;
+    margin-bottom: 3px;
+}
+
+.time {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    color: #ecf0f1;
+}
+
+/* Company Branding */
+.company-brand {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.company-name {
+    font-size: 11px;
+    color: #999;
+    font-weight: 500;
+}
+
+/* Keyboard shortcuts hint */
+.shortcut-hint {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #888;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 10px;
+    }
+    
+    .login-card {
+        padding: 25px 20px;
+    }
+    
+    .system-status {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
+
+/* Focus styles for accessibility */
+input:focus {
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Print styles */
+@media print {
+    .login-card {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .system-status,
+    .datetime-display {
+        display: none;
+    }
+}
